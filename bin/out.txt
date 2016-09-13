@@ -1,0 +1,13 @@
+Sto per stampare le dimensioni della matrice del file:
+600
+800
+Ancora nessun errore
+Ancora nessun errore_1
+Ancora nessun errore_2
+Ancora nessun errore_3
+Please insert the robot start position and the robot goal position
+
+Ancora nessun errore_4
+Ancora nessun errore_5
+0
+ Mannaggia al diavoletto di Mircolosi

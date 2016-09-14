@@ -6,8 +6,8 @@
 
 using namespace std;
 
-#define Black 255
-#define White 0
+#define Black 0
+#define White 255
 
 
 // Il robot si muove su di una cella di 60*80 metri
@@ -54,11 +54,11 @@ int main()
 
 			if ( data1 > 127 )
 			{
-				copia.setDataMatrix(i,j, Black);
+				copia.setDataMatrix(i,j, White);
 			}
 			else
 			{
-				copia.setDataMatrix( i , j , White );
+				copia.setDataMatrix( i , j , Black );
 			}
 		}
 	}

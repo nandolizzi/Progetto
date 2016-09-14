@@ -1,0 +1,12 @@
+Sto per stampare le dimensioni della matrice del file:
+600
+800
+Ancora nessun errore
+Please insert the robot start position and the robot goal position
+
+233
+99
+291
+126
+data3 vale: 131
+data4 vale: 1

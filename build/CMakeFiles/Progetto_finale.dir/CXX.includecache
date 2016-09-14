@@ -8,6 +8,12 @@
 
 ../include/cell.h
 
+../include/get_line.h
+stdio.h
+-
+stdlib.h
+-
+
 ../include/list.h
 cell.h
 ../include/cell.h
@@ -31,6 +37,42 @@ printable_file.h
 ../include/tools.h
 mat.h
 ../include/mat.h
+
+/home/nando/Scrivania/Progetto_Pretto/src/cell.cpp
+cell.h
+/home/nando/Scrivania/Progetto_Pretto/src/cell.h
+iostream
+-
+
+/home/nando/Scrivania/Progetto_Pretto/src/get_line.cpp
+get_line.h
+/home/nando/Scrivania/Progetto_Pretto/src/get_line.h
+stdio.h
+-
+stdlib.h
+-
+string.h
+-
+
+/home/nando/Scrivania/Progetto_Pretto/src/list.cpp
+list.h
+/home/nando/Scrivania/Progetto_Pretto/src/list.h
+cell.h
+/home/nando/Scrivania/Progetto_Pretto/src/cell.h
+iostream
+-
+stdlib.h
+-
+string.h
+-
+
+/home/nando/Scrivania/Progetto_Pretto/src/pgm_file.cpp
+stdio.h
+-
+pgm_file.h
+/home/nando/Scrivania/Progetto_Pretto/src/pgm_file.h
+get_line.h
+/home/nando/Scrivania/Progetto_Pretto/src/get_line.h
 
 /home/nando/Scrivania/Progetto_Pretto/src/project_app.cpp
 pgm_file.h

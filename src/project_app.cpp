@@ -6,6 +6,10 @@
 
 using namespace std;
 
+#define Black 255
+#define White 0
+
+
 // Il robot si muove su di una cella di 60*80 metri
 
 
@@ -18,6 +22,7 @@ int main()
 
 	int r = file -> getRow();
 	int c = file -> getCol();
+	int data1;
 
 	cout << "Sto per stampare le dimensioni della matrice del file:\n" <<  r << "\n" << c << endl;
 
@@ -41,24 +46,30 @@ int main()
 
 	Mat < int > copia ( r , c );
 
-	cout << "Ancora nessun errore_1" << endl;
-
-	for (int i = 0; i < r ; i++)
+	for (int i = 0; i < r; i++)
 	{
 		for (int j = 0; j < c; j++)
 		{
-			data[i*c + j] = (int)file->getData(i, j);
-			copia.setDataMatrix( i, j, data[i*c + j]);
+			data1 = (int) file -> getData(i, j);;
+
+			if ( data1 > 127 )
+			{
+				copia.setDataMatrix(i,j, Black);
+			}
+			else
+			{
+				copia.setDataMatrix( i , j , White );
+			}
 		}
 	}
 
-	cout << "Ancora nessun errore_2" << endl;
+	// cout << "Ancora nessun errore_2" << endl;
 
 	//copia.print();
 
 	putDistance( distance );
 
-	cout << "Ancora nessun errore_3" << endl;
+	// cout << "Ancora nessun errore_3" << endl;
 
 
 
@@ -68,7 +79,7 @@ int main()
 	int get_col_goal_index = 0;
 	getPosition( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 
-	cout << "Ancora nessun errore_4" << endl;
+	//cout << "Ancora nessun errore_4" << endl;
 
 	if ( get_row_start_index == -1 || get_col_start_index == -1 || get_row_goal_index == -1 || get_col_goal_index == -1 )
 	{
@@ -77,41 +88,20 @@ int main()
 	else 
 		NULL;
 
-	cout << "Ancora nessun errore_5" << endl;
+	// cout << "Ancora nessun errore_5" << endl;
 
 	//distance.print();
 
-		for (int i = 0; i < r; i++)
-	{
-		for (int j = 0; j < c; j++)
-		{
-			if (distance(i,j) == -1 || distance(i,j) == -2)
-			{
-				continue;			
-			}
-			else
-			{
-				cout << distance(i,j) << endl;
-				cout << " Mannaggia al diavoletto di Mircolosi" << endl;
-			}
-		}
-	}
+	
+	
+	setPathDistance ( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
+	
+	/*cout << "Ancora nessun errore_6" << endl; */
 
-	
-	
-	/*setPathDistance ( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
-	
-	cout << "Ancora nessun errore_6" << endl;
+	drawPath( distance, copia, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 
-	drawPath( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
-	
-	cout << "Ancora nessun errore_7" << endl;
-	
-	drawNewMap( copia , distance );
 
-	cout << "Ancora nessun errore_8" << endl;
-
- 	string filename;
+ 	/*string filename;
 	
 	cout << "Please insert the name of the new map file" << endl;
 	getline ( cin, filename);
@@ -119,7 +109,7 @@ int main()
 	char *name;
 
 	name = new char [ filename.size() + 1 ];
-    memcpy( name , filename.c_str(), filename.size() + 1);
+    memcpy( name , filename.c_str(), filename.size() + 1);*/
 
 	for (int i = 0; i < r*c ; i ++)
 	 {
@@ -131,11 +121,11 @@ int main()
 		for (int j = 0; j < c; j++)
 		{
 			data[i*c + j] = copia.getDataMatrix( i , j );
-			file -> setData( i , j, data[i*c + j] );
+			file -> setData( data[i*c + j], i , j);
 		}
 	}
 
-	file -> save(name); */
+	file -> save("Ci_siamo_1.pgm");
 
 
 	delete file;

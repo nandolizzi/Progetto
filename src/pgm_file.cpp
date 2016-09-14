@@ -171,7 +171,7 @@ void PgmFile::setData( unsigned char data, int r, int c)
 {
 	if ( r < 0 || r >= _row || c < 0 || c >= _col ) 
 	{
-		printf("ERROR_Index overdrive\n");
+		printf("ERROR_Index overdrive set data pagm\n");
 		return;
 	}
 
@@ -183,7 +183,7 @@ unsigned char PgmFile::getData( int r, int c)
 	unsigned char data;
 	if ( r < 0 || r >= _row || c < 0 || c >= _col )
 	{
-		printf("ERROR_Index overdrive\n");
+		printf("ERROR_Index overdrive get data pgm\n");
 		return 0;
 	}
 	data = _data[r*_col +c];

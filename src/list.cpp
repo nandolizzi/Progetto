@@ -20,32 +20,19 @@ void List::dequeue()
 {
 	/* Si verifica se la lista è vuota */
 	//cout << "starting dequeue" << endl;
-	if ( firstp_ != NULL)
-	{
-		//cout << "la lista non è vuota" << endl;
-		/* La lista è risultata non nulla;
-		   si verifica se la lista è composta da un unico elemento*/
-		if ( firstp_ == lastp_)
-		{
-			//cout << "la lista ha un solo elemento" << endl;
-			/* La lista è risultata essere composta da un unico nodo*/
-			clear();
-		}
-		else
-		{
-		    /* La lista non è risultata essere composta da un unico nodo.*/
-			CellNode *next;
-			//cout << " Prima" << endl;
-			next = firstp_ -> next_cell;
-			//cout << " Dopo" << endl;
-			delete firstp_;
-			firstp_ = next;
-			firstp_-> prev_cell = NULL;
-		}
-	}
-	else
-		return;
+	if ( firstp_ == NULL )
 	return;
+	// se ha un solo elemento
+	if(firstp_ == lastp_)
+		clear();
+	else
+	{
+		CellNode *next_pn = firstp_->next_cell;
+		delete firstp_;
+		firstp_ = next_pn;
+		firstp_->prev_cell = NULL;
+	}
+	
 }
 	
 void List::enqueue( const Cell &end_cell )
@@ -54,21 +41,17 @@ void List::enqueue( const Cell &end_cell )
 	CellNode *new_n = new CellNode (end_cell);
 
 	/* Si verifica se la lista è vuota */
-	if ( firstp_ != NULL )
-	{
-		/*La lista è risultata vuota*/
-		lastp_ -> next_cell = new_n;
-		new_n -> prev_cell = lastp_;
-		lastp_ = new_n;
-	//	cout << "ho inserito direttamente il primo elemento della lista" << endl;
-	}
-	/* La lista non è risultata vuota*/
-	else
+	if( lastp_== NULL )
 	{
 		firstp_ = lastp_ = new_n;
-	//	cout << "ho inserito il primo elemento della lista" << endl;
 	}
-	return;
+	else
+	{
+		lastp_->next_cell = new_n;
+		new_n->prev_cell = lastp_;
+		lastp_ = new_n;
+	}
+	
 }
 
 void List::clear()
@@ -98,7 +81,7 @@ void List::clear()
 
 bool List::checkNotEmpty() const
 {
-	if ( firstp_ == NULL && lastp_ == NULL)
+	if ( firstp_ == NULL || lastp_ == NULL)
 	 return false;
 	return true;
 }

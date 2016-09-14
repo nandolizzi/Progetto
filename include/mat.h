@@ -56,7 +56,7 @@ public:
   T getDataMatrix ( int r, int c) const
   {
     if ( r < 0 || r >= rows_ || c < 0 || c >= cols_ ) {
-    //printf("ERROR_Index overdrive 2\n");
+    printf("ERROR_Index overdrive 2\n");
     return 0;
   }
     return data_[r * cols_ + c];

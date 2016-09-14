@@ -1,0 +1,176 @@
+Sto per stampare le dimensioni della matrice del file:
+600
+800
+Ancora nessun errore
+Please insert the robot start position and the robot goal position
+
+309
+75
+206
+654
+206 654
+0
+ Mannaggia al diavoletto di Mircolosi
+sono nel primo for del main
+ 
+sono nel secondo for del main
+ 
+sono nel secondo for del main
+ 
+sono entrato nell'if 
+
+attorno alla goal cell ho questi valori: -2
+
+sono nel secondo for del main
+ 
+sono nel primo for del main
+ 
+sono nel secondo for del main
+ 
+sono entrato nell'if 
+
+attorno alla goal cell ho questi valori: -2
+
+sono nel secondo for del main
+ 
+sono nel secondo for del main
+ 
+sono entrato nell'if 
+
+attorno alla goal cell ho questi valori: -2
+
+sono nel primo for del main
+ 
+sono nel secondo for del main
+ 
+sono nel secondo for del main
+ 
+sono entrato nell'if 
+
+attorno alla goal cell ho questi valori: -2
+
+sono nel secondo for del main
+ 
+206 654
+0
+ Mannaggia al diavoletto di Mircolosi nella fuzione
+sono nel primo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono entrato nell'if nella funzione
+ nella funzione attorno alla goal cell riga: 205 colonna: 654 ho questi valori: -2
+sono nel secondo for del main nella funzione
+sono nel primo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono entrato nell'if nella funzione
+ nella funzione attorno alla goal cell riga: 206 colonna: 653 ho questi valori: -2
+sono nel secondo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono entrato nell'if nella funzione
+ nella funzione attorno alla goal cell riga: 206 colonna: 655 ho questi valori: -2
+sono nel primo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono nel secondo for del main nella funzione
+sono entrato nell'if nella funzione
+ nella funzione attorno alla goal cell riga: 207 colonna: 654 ho questi valori: -2
+sono nel secondo for del main nella funzione
+Sono nella funzione, ed ho trovato lo 0 nella goal cell
+206 654
+0
+ Mannaggia al diavoletto di Mircolosi nella fuzione
+sono nel primo nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono entrato nell'if nella funzione prima del controllo sulla lista
+ nella funzione attorno alla goal cell riga: 205 colonna: 654 ho questi valori: -2
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono nel primo nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono entrato nell'if nella funzione prima del controllo sulla lista
+ nella funzione attorno alla goal cell riga: 206 colonna: 653 ho questi valori: -2
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono entrato nell'if nella funzione prima del controllo sulla lista
+ nella funzione attorno alla goal cell riga: 206 colonna: 655 ho questi valori: -2
+sono nel primo nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono nel secondo for nella funzione prima del controllo sulla lista
+sono entrato nell'if nella funzione prima del controllo sulla lista
+ nella funzione attorno alla goal cell riga: 207 colonna: 654 ho questi valori: -2
+sono nel secondo for nella funzione prima del controllo sulla lista
+206 654
+0
+ Mannaggia al diavoletto di Mircolosi nella fuzione prima di listare
+sono nel primo nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono entrato nell'if nella funzione appena dopo il controllo sulla lista
+ nella funzione attorno alla goal cell riga: 205 colonna: 654 ho questi valori: -2
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono nel primo nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono entrato nell'if nella funzione appena dopo il controllo sulla lista
+ nella funzione attorno alla goal cell riga: 206 colonna: 653 ho questi valori: -2
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono entrato nell'if nella funzione appena dopo il controllo sulla lista
+ nella funzione attorno alla goal cell riga: 206 colonna: 655 ho questi valori: -2
+sono nel primo nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+sono entrato nell'if nella funzione appena dopo il controllo sulla lista
+ nella funzione attorno alla goal cell riga: 207 colonna: 654 ho questi valori: -2
+sono nel secondo for nella funzione appena dopo il controllo sulla lista
+riga 206
+colonna 654
+dist: 0
+
+sì sono nel primo for -1
+sì sono nel secondo for -1
+sì sono nel secondo for 0
+-1 e 0 sono diverse
+riga 205 e colonna 654
+la distanza all'interno della cella prima della verifica è: 4294967294
+la distanza da goal a goal è: 0
+Verifico l'accessibilità della cella di riga 205 e colonna 654
+la distanza all'interno della cella dopo la verifica è: 4294967294
+la cella è libera : 0
+la distanza di default della cella è: 4294967294
+sì sono nel secondo for 1
+sì sono nel primo for 0
+sì sono nel secondo for -1
+0 e -1 sono diverse
+riga 206 e colonna 653
+la distanza all'interno della cella prima della verifica è: 4294967294
+la distanza da goal a goal è: 0
+Verifico l'accessibilità della cella di riga 206 e colonna 653
+la distanza all'interno della cella dopo la verifica è: 4294967294
+la cella è libera : 0
+la distanza di default della cella è: 4294967294
+sì sono nel secondo for 0
+sì sono nel secondo for 1
+0 e 1 sono diverse
+riga 206 e colonna 655
+la distanza all'interno della cella prima della verifica è: 4294967294
+la distanza da goal a goal è: 0
+Verifico l'accessibilità della cella di riga 206 e colonna 655
+la distanza all'interno della cella dopo la verifica è: 4294967294
+la cella è libera : 0
+la distanza di default della cella è: 4294967294
+sì sono nel primo for 1
+sì sono nel secondo for -1
+sì sono nel secondo for 0
+1 e 0 sono diverse
+riga 207 e colonna 654
+la distanza all'interno della cella prima della verifica è: 4294967294
+la distanza da goal a goal è: 0
+Verifico l'accessibilità della cella di riga 207 e colonna 654
+la distanza all'interno della cella dopo la verifica è: 4294967294
+la cella è libera : 0
+la distanza di default della cella è: 4294967294
+sì sono nel secondo for 1
+data vale :4294967294
+data1 vale: 0
+-2
+
+Error! Something went wrong, the start position result unexplored

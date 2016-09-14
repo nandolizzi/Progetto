@@ -32,6 +32,18 @@ printable_file.h
 mat.h
 ../include/mat.h
 
+/home/nando/Scrivania/Progetto_Pretto/src/project_app.cpp
+pgm_file.h
+/home/nando/Scrivania/Progetto_Pretto/src/pgm_file.h
+mat.h
+/home/nando/Scrivania/Progetto_Pretto/src/mat.h
+tools.h
+/home/nando/Scrivania/Progetto_Pretto/src/tools.h
+iostream
+-
+string.h
+-
+
 /home/nando/Scrivania/Progetto_Pretto/src/tools.cpp
 tools.h
 /home/nando/Scrivania/Progetto_Pretto/src/tools.h

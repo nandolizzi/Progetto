@@ -20,4 +20,7 @@ echo ""
 echo ""
 
 cd ../bin
-./Progetto_finale > out1.txt
+
+#./Progetto_finale > out1.txt
+
+./Progetto_finale

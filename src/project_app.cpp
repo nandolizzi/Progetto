@@ -12,37 +12,38 @@ using namespace std;
 
 // Il robot si muove su di una cella di 60*80 metri
 
-
 int main()
 {
+	/* Si inizializza una variabile file appartenente alla classe astratta base PrintableFile*/
+	
 	PrintableFile *file;
+
+	/* Si specifica l'appartennza di file alla classe derivata di tipo PgmFile*/
 
 	file = new PgmFile();
 	file -> load("map.pgm");
 
+	/* Si ricavano gli attributi privati relativi al numero di righe e numero di colonne
+	   della matrice rappresentante il file immagine */
+
 	int r = file -> getRow();
 	int c = file -> getCol();
-	int data1;
-
-	cout << "Sto per stampare le dimensioni della matrice del file:\n" <<  r << "\n" << c << endl;
+	int data;
 
 	Mat <int> distance(r,c);
-	int data[r*c];
 
 	for (int i = 0; i < r ; i++)
 	{
 		for (int j = 0; j < c; j++)
 		{
-			data[i*c + j] = (int) file -> getData(i, j);
-			distance.setDataMatrix( i, j, data[i*c + j]);
+			data = (int) file -> getData(i, j);
+			distance.setDataMatrix( i, j, data);
 		}
 	}
 
-	cout << "Ancora nessun errore" << endl;
-
-	//distance.print();
-
-	
+	/* Si effettua la copia della matrice rappresentante l'immagine del file ponendo particolare attenzione
+	   nel porre eventuali celle son valori diversi da "0" o a "256" al valore più prossimo ad uno dei due */
+	data = 0;
 
 	Mat < int > copia ( r , c );
 
@@ -50,9 +51,9 @@ int main()
 	{
 		for (int j = 0; j < c; j++)
 		{
-			data1 = (int) file -> getData(i, j);;
+			data = (int) file -> getData(i, j);;
 
-			if ( data1 > 127 )
+			if ( data > 127 )
 			{
 				copia.setDataMatrix(i,j, White);
 			}
@@ -63,15 +64,7 @@ int main()
 		}
 	}
 
-	// cout << "Ancora nessun errore_2" << endl;
-
-	//copia.print();
-
 	putDistance( distance );
-
-	// cout << "Ancora nessun errore_3" << endl;
-
-
 
 	int get_row_start_index = 0;
 	int get_col_start_index = 0;
@@ -79,55 +72,51 @@ int main()
 	int get_col_goal_index = 0;
 	getPosition( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 
-	//cout << "Ancora nessun errore_4" << endl;
-
-	if ( get_row_start_index == -1 || get_col_start_index == -1 || get_row_goal_index == -1 || get_col_goal_index == -1 )
+	while ( get_row_start_index == -1 && get_col_start_index == -1 && get_row_goal_index == -1 && get_col_goal_index == -1 )
 	{
 		getPosition( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 	}
-	else 
-		NULL;
 
-	// cout << "Ancora nessun errore_5" << endl;
-
-	//distance.print();
-
-	
-	
 	setPathDistance ( distance, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 	
-	/*cout << "Ancora nessun errore_6" << endl; */
 
 	drawPath( distance, copia, get_row_start_index ,get_col_start_index, get_row_goal_index, get_col_goal_index);
 
 
- 	/*string filename;
+	// Si dichiara una stringa da utilizzare per poter catturare il nome del file
+ 	string filename;
+ 	
+ 	// Si elimina il carrattere di terminazione " \n " che rilasciato dal precedente utilizzo di cin
+ 	cin.ignore();
 	
 	cout << "Please insert the name of the new map file" << endl;
+	
+
 	getline ( cin, filename);
 
 	char *name;
 
 	name = new char [ filename.size() + 1 ];
-    memcpy( name , filename.c_str(), filename.size() + 1);*/
+    memcpy( name , filename.c_str(), filename.size() + 1);
 
-	for (int i = 0; i < r*c ; i ++)
+	/*for (int i = 0; i < r*c ; i ++)
 	 {
 	 	data [i] = 0;
-	 } 
+	 } */
+
+	data = 0; 
 
 	for (int i = 0; i < r ; i++)
 	{
 		for (int j = 0; j < c; j++)
 		{
-			data[i*c + j] = copia.getDataMatrix( i , j );
-			file -> setData( data[i*c + j], i , j);
+			data= copia.getDataMatrix( i , j );
+			file -> setData( data, i , j);
 		}
 	}
 
-	file -> save("Ci_siamo_1.pgm");
-
-
+	file -> save(name);
+	
 	delete file;
 
 	return 0;

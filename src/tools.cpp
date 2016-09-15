@@ -11,8 +11,7 @@ using namespace std;
 #define free_cell -2
 #define goal_cell 0
 #define path_cell 127
-#define start_cell 180
-#define goal_cell_color 200
+#define color_cell 70
 
 
 void getPosition( Mat <int> &m, int &get_row_start_index , int &get_col_start_index, int &get_row_goal_index , int &get_col_goal_index)
@@ -22,21 +21,25 @@ void getPosition( Mat <int> &m, int &get_row_start_index , int &get_col_start_in
 	int r= m.getNumRows();
 	int c= m.getNumCols();
 
-	cout << "Please insert the robot start position and the robot goal position\n" << endl;
-	//cin >> grs >> gcs >> grg >> gcg ;
-	grs = 23.3;
+	cout << "Please insert the robot start position and the robot goal position.\n" << endl;
+	cout << "Insert the start column: " << endl;
+	cin >> grs;
+	cout << "Insert the start row: " << endl;
+	cin >> gcs;
+	cout << "Insert the goal column: " << endl;
+	cin >> grg;
+	cout << "Insert the goal row: " << endl;
+	cin >> gcg;
+	
+	/*grs = 23.3;
 	gcs = 9.9;
 	grg = 29.1;
-	gcg = 12.6;
+	gcg = 12.6;*/
+
 	get_row_start_index = (int)round(grs * 10);
 	get_col_start_index = (int)round(gcs * 10);
 	get_row_goal_index = (int)round(grg * 10);
 	get_col_goal_index = (int)round(gcg * 10);
-	
-	 // cout << grs << "\n" << gcs << "\n";
-	cout << get_row_start_index << "\n" << get_col_start_index << "\n";
-	// cout << grg << "\n" << gcg << "\n";
-	cout << get_row_goal_index << "\n" << get_col_goal_index << "\n";
 	
 	if (get_row_start_index == get_row_goal_index 
 		&& get_col_start_index == get_col_goal_index)
@@ -219,12 +222,12 @@ void setPathDistance(Mat <int> &m, int &get_row_start_index , int &get_col_start
 		}
 	}
 
-	int data3 = m(get_row_start_index , get_col_start_index);
+	/*int data3 = m(get_row_start_index , get_col_start_index);
 
 	cout << "data3 vale: " << data3 << endl;
 
 	int data4 = m(get_row_goal_index , get_col_goal_index + 1);
-	cout << "data4 vale: " << data4 << endl;
+	cout << "data4 vale: " << data4 << endl; */
 
 	/*Per completezza verifico di aver aggiornato il valore della distanza 
 	della start position*/
@@ -244,8 +247,8 @@ void drawPath(Mat <int> &m, Mat <int> &m1, int &get_row_start_index , int &get_c
 	this_col = get_col_start_index;
 
 	path_distance = m.getDataMatrix(get_row_start_index , get_col_start_index);
-	m1.setDataMatrix( get_row_start_index , get_col_start_index, start_cell);
-	drawSquare( m1, get_row_start_index, get_col_start_index);
+	m1.setDataMatrix( get_row_start_index , get_col_start_index, color_cell);
+	drawRectStart( m1, get_row_start_index, get_col_start_index);
 
 	while( path_distance > 0 )
 	{
@@ -267,31 +270,34 @@ void drawPath(Mat <int> &m, Mat <int> &m1, int &get_row_start_index , int &get_c
 			}
 		}
 	}
-	m1.setDataMatrix( get_row_goal_index , get_col_goal_index, goal_cell_color);
-	drawRect( m1, get_row_goal_index , get_col_goal_index);
+	m1.setDataMatrix( get_row_goal_index , get_col_goal_index, color_cell);
+	drawRectGoal( m1, get_row_goal_index , get_col_goal_index);
 }
 
-void drawSquare(Mat <int> &m, int &get_row_start_index , int &get_col_start_index)
+void drawRectStart(Mat <int> &m, int &get_row_start_index , int &get_col_start_index)
 {
-	for (int i = -3 ; i <= 3 ; i++)
+	for (int i = -2 ; i <= 2; i++)
 	{
-		m.setDataMatrix( get_row_start_index -3 , get_col_start_index +i , start_cell);
-		m.setDataMatrix( get_row_start_index +3 , get_col_start_index +i , start_cell);
-		m.setDataMatrix( get_row_start_index +i , get_col_start_index -3 , start_cell);
-		m.setDataMatrix( get_row_start_index +i , get_col_start_index +3 , start_cell);
+		m.setDataMatrix( get_row_start_index -4 , get_col_start_index +i ,  color_cell);
+		m.setDataMatrix( get_row_start_index +4 , get_col_start_index +i ,  color_cell);
+	}
+	for (int i = -4 ; i <= 4; i++)
+	{
+		m.setDataMatrix( get_row_start_index + i , get_col_start_index + 2 , color_cell);
+		m.setDataMatrix( get_row_start_index + i , get_col_start_index - 2 , color_cell);
 	}
 } 
 
-void drawRect(Mat <int> &m, int &get_row_goal_index , int &get_col_goal_index)
+void drawRectGoal(Mat <int> &m, int &get_row_goal_index , int &get_col_goal_index)
 {
 	for (int i = -3 ; i <= 3; i++)
 	{
-		m.setDataMatrix( get_row_goal_index -6 , get_col_goal_index +i ,  goal_cell_color);
-		m.setDataMatrix( get_row_goal_index +6 , get_col_goal_index +i ,  goal_cell_color);
+		m.setDataMatrix( get_row_goal_index -6 , get_col_goal_index +i ,  color_cell);
+		m.setDataMatrix( get_row_goal_index +6 , get_col_goal_index +i ,  color_cell);
 	}
 	for (int i = -6 ; i <= 6; i++)
 	{
-		m.setDataMatrix( get_row_goal_index + i , get_col_goal_index + 3 , goal_cell_color);
-		m.setDataMatrix( get_row_goal_index + i , get_col_goal_index - 3 , goal_cell_color);
+		m.setDataMatrix( get_row_goal_index + i , get_col_goal_index + 3 , color_cell);
+		m.setDataMatrix( get_row_goal_index + i , get_col_goal_index - 3 , color_cell);
 	}
 }

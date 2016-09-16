@@ -8,16 +8,17 @@
    {
    
    public:
-   	
+   
+   /* Costruttore, costruttore di opia e distruttore */
+   
    Cell(){};
    Cell(int r, int c, int d);
   	Cell (const Cell &other);
 	~Cell(){};
 
-	// Overloading operatori
-
 	// Stampa a video della cella
 	void printCell() const;
+
 	// Metodi per la restituzione dei parametri privati
 	inline int getDistance() const { return dist_ ; };
 	inline int getRow() const { return row_; };

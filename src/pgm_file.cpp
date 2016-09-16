@@ -2,6 +2,7 @@
 #include "pgm_file.h"
 #include "get_line.h"
 
+/* Costruttore e distruttore della classe */
 
 PgmFile::PgmFile()
 {
@@ -16,10 +17,12 @@ PgmFile::~PgmFile()
 	}
 	return;
 }
-	
+
+/*Funzione per la stampa del file di tipo PGM. */
+
 void PgmFile::print() const
 {
-	printf("Sto per stampare un immagine PGM\n");
+	printf("I'm printing a PGM file\n");
 	for (int i = 0; i < _row; i++)
 	{
 		for (int j = 0; j < _col; j++)
@@ -30,62 +33,75 @@ void PgmFile::print() const
 
 }
 
+/* Funzione booleana per controllare il caricamento del file*/
+
 bool PgmFile::load( const char *filename )
 {
 	FILE *fp  = fopen(filename, "r");
 	if (fp == NULL)
 	{
 		/*Verifica apertura di un file non vuoto*/
-		printf("FILE vuoto\n");
+		
+		printf("Empty file!\n");
 		return false;
 	}
-	/*il file non è vuoto, si procede con la lettura delle
-	  dimenbsioni della matrice*/
+	
+	/* Il file non è vuoto, si procede con la lettura delle
+	  dimensioni della matrice*/
+
 	char *line;
 	line = getLine(fp);
 	if ( line == NULL)
 	{
 		/*Verifica acquisizione della prima riga*/
-		printf("Errore, riga vuota\n");
+
+		printf("Error! The first row is empty!\n");
 		fclose(fp);
 		return false;
 	}
 	else if ( line[0] != 'P' || line[1] != '2')
 	{
-		/*Verifica che il codice inizi per il magic number dei file pgm*/
-		printf("Il file selezionato non è un PgmFile\n");
+		/*Verifica che il codice inizi con il magic number dei file PGM */
+
+		printf("Error! The selected file is not a PGM file!\n");
 		free(line);
 		fclose(fp);
 		return false;
 	}
 	/*Estazione delle dimensioni della matrice necessaria al
-	  salvataggio del dato e del massimo valore di luminosità*/
+	  salvataggio del dato riguardante l'intensità di grigio
+	   e del massimo valore di luminosità*/
+
 	_row = _col = -1;
+
 	while(( line = getLine(fp)) != NULL)
 	{
 		if ( line[0] != '#')
 		{
 			if ( sscanf( line, "%d %d", &_col, &_row) != 2)
 			{
-				printf("Errore nel dimensionamento della matrice\n");
+				printf("Error index!\n");
 				free(line);
 				fclose(fp);
 				return false;
 			}
+
 			/*Estrazione del valore massimo di luminosità*/
+
 			int max_value;
 			free ( line );
 			line = getLine(fp);
 			if(sscanf(line,"%d", &max_value) != 1)
 			{
-				printf("Errore, sono inseriti più di un valore di luminosità massima\n");
+				printf("Error! There are more than one maximum value of grey intensity.\n");
 				free ( line );
 				fclose( fp );
 				return false;
 			}
 			else
 			{
-				/*Ok! Ho copiato il valore della luminosità massima*/
+				/*Ok! Si è copiato il valore della luminosità massima*/
+
 				free ( line );
 				break;
 			}
@@ -93,32 +109,38 @@ bool PgmFile::load( const char *filename )
 		free( line );
  	}
  	/*Immagazzinamento dei dati
- 	  Per prima cosa verifico la corretta dimensione di righe e colonne*/
+ 	  
+ 	Per prima cosa si verifica la corretta dimensione di righe e colonne, */
+
  	if ( _col == -1 || _row == -1)
  	{
  		/*I valori di riga e colonna acquisiti non sono
  		  validi*/
- 		printf("Errore nel passaggio dei valori delle dimensioni\n");
+
+ 		printf("Error! The dimension are not greater than zero. \n");
  		fclose(fp);
  		return false;
  	}
- 	/*Procedo con il salvataggio del valore della dimensione totale
+ 	/* Si procede con il salvataggio del valore della dimensione totale
  	  dell'array e con l'allocazione di data*/
+
  	unsigned int data_dim= _row * _col;
  	_data = new unsigned char[data_dim];
  	if ( _data == NULL)
  	{
- 		printf("Errore nell'allocazione di _data\n");
+ 		printf("Error during _data allocation.\n");
  		return false;
  	}
- 	/*Procedo con la lettura del file e dichiaro una variabile temporanea
- 	  per non scrivere più volte su _data*/
+ 	
+ 	/* si procede con la lettura del file si dichiara una variabile temporanea
+ 	  per evitare di scrivere su _data per pià di una volta. */
+
  	int temp;
  	for (int i = 0; i < data_dim; i++)
  	{
  		if (fscanf(fp, "%d", &temp) != 1)
  		{
- 			/*Non riesco a leggere i dati*/
+ 			/*Non si è riusciti a leggere i dati*/
  			delete [] _data;
  			fclose(fp);
  			return false;
@@ -129,22 +151,27 @@ bool PgmFile::load( const char *filename )
  	return true;
  }
 
+
+/* Funzione booleana per controllare il salvataggio del file*/
+
 bool PgmFile::save( const char *filename )
 {
 	FILE *fs = fopen( filename, "w");
-	/*Controllo che l'apertura del file sia avvenuta correttamente*/
+	
+	/* Si controlla che l'apertura del file sia avvenuta correttamente*/
+
 	if ( fs == NULL)
 	{
-		printf("Errore! Il file è vuoto\n");
+		printf("Error! Empty file.\n");
 		fclose(fs);
 		return false;
 	}
-	/*Passo alla scrittura del file
-	  Per prima cosa scrivo l'header, si noti come per adesso
-	  debba settare il max_value e devo ricalcolare il valore massimo*/
+	
+	/* Si procede con la scrittura del file. */
+
 	fprintf( fs , "P");
 	fprintf( fs , "2\n");
-	fprintf( fs, "#Questo è un commento\n");
+	fprintf( fs, "#This is a comment\n");
 	fprintf( fs, "%d %d\n",_col,_row );
 	fprintf( fs, "255\n" );
 	int data_dim = _col * _row;
@@ -156,6 +183,7 @@ bool PgmFile::save( const char *filename )
 	return true;
 }
 
+/* Funzioni utilizzate per la lettura degli attributi privati del file. */
 int PgmFile::getRow() const
 {
 	return _row;

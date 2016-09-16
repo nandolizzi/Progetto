@@ -1,1 +1,0 @@
-/usr/bin/clang++    -std=c++11    CMakeFiles/Progetto_finale.dir/src/project_app.cpp.o CMakeFiles/Progetto_finale.dir/src/get_line.cpp.o CMakeFiles/Progetto_finale.dir/src/pgm_file.cpp.o CMakeFiles/Progetto_finale.dir/src/tools.cpp.o CMakeFiles/Progetto_finale.dir/src/cell.cpp.o CMakeFiles/Progetto_finale.dir/src/list.cpp.o  -o ../bin/Progetto_finale -rdynamic 

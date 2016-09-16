@@ -99,24 +99,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Progetto_finale
+# Target rules for targets named generate_robot_path
 
 # Build rule for target.
-Progetto_finale: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 Progetto_finale
-.PHONY : Progetto_finale
+generate_robot_path: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 generate_robot_path
+.PHONY : generate_robot_path
 
 # fast build rule for target.
-Progetto_finale/fast:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/build
-.PHONY : Progetto_finale/fast
+generate_robot_path/fast:
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/build
+.PHONY : generate_robot_path/fast
 
 src/cell.o: src/cell.cpp.o
 .PHONY : src/cell.o
 
 # target to build an object file
 src/cell.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/cell.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/cell.cpp.o
 .PHONY : src/cell.cpp.o
 
 src/cell.i: src/cell.cpp.i
@@ -124,7 +124,7 @@ src/cell.i: src/cell.cpp.i
 
 # target to preprocess a source file
 src/cell.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/cell.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/cell.cpp.i
 .PHONY : src/cell.cpp.i
 
 src/cell.s: src/cell.cpp.s
@@ -132,7 +132,7 @@ src/cell.s: src/cell.cpp.s
 
 # target to generate assembly for a file
 src/cell.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/cell.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/cell.cpp.s
 .PHONY : src/cell.cpp.s
 
 src/get_line.o: src/get_line.cpp.o
@@ -140,7 +140,7 @@ src/get_line.o: src/get_line.cpp.o
 
 # target to build an object file
 src/get_line.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/get_line.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/get_line.cpp.o
 .PHONY : src/get_line.cpp.o
 
 src/get_line.i: src/get_line.cpp.i
@@ -148,7 +148,7 @@ src/get_line.i: src/get_line.cpp.i
 
 # target to preprocess a source file
 src/get_line.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/get_line.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/get_line.cpp.i
 .PHONY : src/get_line.cpp.i
 
 src/get_line.s: src/get_line.cpp.s
@@ -156,7 +156,7 @@ src/get_line.s: src/get_line.cpp.s
 
 # target to generate assembly for a file
 src/get_line.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/get_line.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/get_line.cpp.s
 .PHONY : src/get_line.cpp.s
 
 src/list.o: src/list.cpp.o
@@ -164,7 +164,7 @@ src/list.o: src/list.cpp.o
 
 # target to build an object file
 src/list.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/list.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/list.cpp.o
 .PHONY : src/list.cpp.o
 
 src/list.i: src/list.cpp.i
@@ -172,7 +172,7 @@ src/list.i: src/list.cpp.i
 
 # target to preprocess a source file
 src/list.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/list.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/list.cpp.i
 .PHONY : src/list.cpp.i
 
 src/list.s: src/list.cpp.s
@@ -180,7 +180,7 @@ src/list.s: src/list.cpp.s
 
 # target to generate assembly for a file
 src/list.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/list.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/list.cpp.s
 .PHONY : src/list.cpp.s
 
 src/pgm_file.o: src/pgm_file.cpp.o
@@ -188,7 +188,7 @@ src/pgm_file.o: src/pgm_file.cpp.o
 
 # target to build an object file
 src/pgm_file.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/pgm_file.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/pgm_file.cpp.o
 .PHONY : src/pgm_file.cpp.o
 
 src/pgm_file.i: src/pgm_file.cpp.i
@@ -196,7 +196,7 @@ src/pgm_file.i: src/pgm_file.cpp.i
 
 # target to preprocess a source file
 src/pgm_file.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/pgm_file.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/pgm_file.cpp.i
 .PHONY : src/pgm_file.cpp.i
 
 src/pgm_file.s: src/pgm_file.cpp.s
@@ -204,7 +204,7 @@ src/pgm_file.s: src/pgm_file.cpp.s
 
 # target to generate assembly for a file
 src/pgm_file.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/pgm_file.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/pgm_file.cpp.s
 .PHONY : src/pgm_file.cpp.s
 
 src/project_app.o: src/project_app.cpp.o
@@ -212,7 +212,7 @@ src/project_app.o: src/project_app.cpp.o
 
 # target to build an object file
 src/project_app.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/project_app.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/project_app.cpp.o
 .PHONY : src/project_app.cpp.o
 
 src/project_app.i: src/project_app.cpp.i
@@ -220,7 +220,7 @@ src/project_app.i: src/project_app.cpp.i
 
 # target to preprocess a source file
 src/project_app.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/project_app.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/project_app.cpp.i
 .PHONY : src/project_app.cpp.i
 
 src/project_app.s: src/project_app.cpp.s
@@ -228,7 +228,7 @@ src/project_app.s: src/project_app.cpp.s
 
 # target to generate assembly for a file
 src/project_app.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/project_app.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/project_app.cpp.s
 .PHONY : src/project_app.cpp.s
 
 src/tools.o: src/tools.cpp.o
@@ -236,7 +236,7 @@ src/tools.o: src/tools.cpp.o
 
 # target to build an object file
 src/tools.cpp.o:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/tools.cpp.o
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/tools.cpp.o
 .PHONY : src/tools.cpp.o
 
 src/tools.i: src/tools.cpp.i
@@ -244,7 +244,7 @@ src/tools.i: src/tools.cpp.i
 
 # target to preprocess a source file
 src/tools.cpp.i:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/tools.cpp.i
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/tools.cpp.i
 .PHONY : src/tools.cpp.i
 
 src/tools.s: src/tools.cpp.s
@@ -252,7 +252,7 @@ src/tools.s: src/tools.cpp.s
 
 # target to generate assembly for a file
 src/tools.cpp.s:
-	$(MAKE) -f CMakeFiles/Progetto_finale.dir/build.make CMakeFiles/Progetto_finale.dir/src/tools.cpp.s
+	$(MAKE) -f CMakeFiles/generate_robot_path.dir/build.make CMakeFiles/generate_robot_path.dir/src/tools.cpp.s
 .PHONY : src/tools.cpp.s
 
 # Help Target
@@ -261,8 +261,8 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... Progetto_finale"
 	@echo "... edit_cache"
+	@echo "... generate_robot_path"
 	@echo "... rebuild_cache"
 	@echo "... src/cell.o"
 	@echo "... src/cell.i"

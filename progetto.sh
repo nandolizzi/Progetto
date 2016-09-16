@@ -3,7 +3,7 @@
 clear
 echo "Cleaninig"
 rm -r build
-rm bin/Progetto_finale
+rm bin/Pgenerate_robot_path
 
 echo "mkdir"
 mkdir build/
@@ -21,6 +21,6 @@ echo ""
 
 cd ../bin
 
-#./Progetto_finale > out1.txt
+#./generate_robot_path > out1.txt
 
-./Progetto_finale
+./generate_robot_path map.pgm

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-// Cell(){};
+/* Costruttore, costruttore di copia e distruttore*/
 Cell::Cell(int r, int c, int d)
 {
 	row_ = r;
@@ -18,9 +18,6 @@ Cell::Cell(const Cell &other)
   	col_ = other.col_;
   	dist_ = other.dist_;
 }
-
-
-// Overloading operatori
 
 // Stampa a video della cella
 void Cell::printCell() const
